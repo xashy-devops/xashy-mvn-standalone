@@ -1,0 +1,10 @@
+name: mymavenbuild 
+on: pull_request
+jobs:
+  installmaven:
+    runs-on: self-hosted
+    steps:
+      - name: installjava
+        run: sudo yum update -y && sudo yum install java
+      - name: install maven 
+        run: sudo yum install maven -y  
