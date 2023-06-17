@@ -2,7 +2,7 @@ name: mymavenbuild
 on: push
 jobs:
   runmaven:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps: 
       - name: checkout the repo ###clone the code from the repo into the runner 
         uses: actions/checkout@v3
@@ -23,5 +23,8 @@ jobs:
         with:
           name: javajar
           path: target/*jar
-    
+    #### github needs to authenticate to your aws acount. 
+    ### There are two ways auth can be setup. 
+    ###1) making use of access keys and secretkeys 
+    ###2) making OIDC (most recommeded) :AssumeRole. 
           
