@@ -1,9 +1,14 @@
 name: mymavenbuild 
 on: push
 jobs:
-  installmaven:
+  runmaven:
     runs-on: self-hosted
-    steps:
-      - name: installjava
-        run: sudo yum update -y 
-      
+    steps: 
+      - name: checkout the repo ###clone the code from the repo into the runner 
+        uses: actions/checkout@v3
+
+      - name: setup java and maven environment 
+        uses:  actions/setup-java@v3 #### this action would install java , setup the maven environment  
+        with:
+          distribution: 'temurin'
+          cache: 'maven'    
