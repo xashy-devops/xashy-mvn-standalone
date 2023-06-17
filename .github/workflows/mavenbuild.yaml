@@ -17,4 +17,11 @@ jobs:
 
       - name: buildwithmaven
         run: mvn clean package 
+      
+      - name: uploadartifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: javajar
+          path: target/*jar
+    
           
