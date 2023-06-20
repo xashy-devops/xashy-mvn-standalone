@@ -2,7 +2,7 @@ name: mymavenbuild
 on: pull_request
 jobs:
    installmaven:
-       runs-on: self-hosted
+       runs-on: ubuntu-latest
        steps:
          - name: install java
            run: sudo yum update -y && sudo yum install java
