@@ -1,5 +1,5 @@
 name: mymavenbuild
-on: pull_request
+on: push
 jobs:
    installmaven:
        runs-on: ubuntu-latest
