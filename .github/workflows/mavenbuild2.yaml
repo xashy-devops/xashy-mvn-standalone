@@ -4,7 +4,7 @@ jobs:
    installmaven:
        runs-on: ubuntu-latest
        steps:
-         - name: install java
+         - name: install java againS
            run: sudo yum update -y && sudo yum install java
          - name: install maven 
            run: sudo yum install maven -y
