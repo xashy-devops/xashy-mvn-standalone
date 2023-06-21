@@ -1,10 +1,20 @@
-name: mymavenbuild
-on: pull_request
+
+name: firstworkflow
+### specify the triggers
+on: workflow_dispatch #### can only be triggered manually
 jobs:
-   installmaven:
-       runs-on: ubuntu-latest
-       steps:
-         - name: install java
-           run: sudo yum update -y && sudo yum install java
-         - name: install maven 
-           run: sudo yum install maven -y
+### specify the job name   
+  firstjob:
+     runs-on: ubuntu-latest
+     steps:
+      - name: salutation
+        run: echo "we are learning github action"
+      - name: install apache 
+        run: sudo apt-get install apache2
+  secondjob:
+      runs-on: ubuntu-latest
+      steps:
+       - name: update system 
+         run: sudo apt-get update -y
+       - name: install java
+         run: sudo apt install default-jdk
